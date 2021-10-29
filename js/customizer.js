@@ -39,4 +39,25 @@
 			}
 		} );
 	} );
+
+	// Desa customizer
+	function replaceStyle(id, val){
+        var style = '<style id="' + id + '">' + val + '</style>';
+        var el =  $( '#' + id );
+        if ( el.length ) {
+            el.replaceWith( style );
+        } else {
+            $( 'head' ).append( style );
+        }
+    }
+    Object.keys(desa_customizable_color).forEach(
+        function(id){
+            var opt = desa_customizable_color[id];
+            wp.customize( id, function( value ) {
+                value.bind( function( to ) {
+                    replaceStyle(id, opt.css.replace(/%s/g, to));
+                } );
+            } );
+        }
+    );
 }( jQuery ) );

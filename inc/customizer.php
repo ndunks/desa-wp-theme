@@ -31,9 +31,43 @@ function desa_customize_register( $wp_customize ) {
 			)
 		);
 	}
+
+	foreach ($GLOBALS['desa_customizable_color'] as $id => $val)
+	{
+		$wp_customize->add_setting( $id, array(
+			'default' => $val['default'],
+			'type'           => 'theme_mod',
+			'transport'      => 'postMessage'
+		) );
+		$wp_customize->add_control( 
+			new WP_Customize_Color_Control( 
+			$wp_customize, 
+			$id, 
+			array(
+				'label'      => $val['label'],
+				'section'    => 'colors',
+				'settings'   => $id,
+			)
+		));
+	}
+	if ( $wp_customize->is_preview() && ! is_admin() ){
+		add_action( 'wp_head', 'desa_customizer_js', 21);
+	}
 }
 add_action( 'customize_register', 'desa_customize_register' );
 
+/**
+ * Client-side helper for live preview
+ * @return void
+ */
+function desa_customizer_js(){
+	?> 
+	<script type="text/javascript">
+		// Customizer Script Variable
+		var desa_customizable_color = <?php echo json_encode($GLOBALS['desa_customizable_color']) ?>;
+	</script>
+	<?php
+}
 /**
  * Render the site title for the selective refresh partial.
  *

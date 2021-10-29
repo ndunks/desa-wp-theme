@@ -145,13 +145,18 @@ function desa_scripts() {
 	wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/bootstrap.css', array(), '5' );
 
 	wp_enqueue_script( 'desa-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-	wp_enqueue_script( 'bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js', array(), null, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'desa_scripts' );
+
+/**
+ * Global config variables
+ */
+require get_template_directory() . '/inc/config.php';
 
 /**
  * Implement the Custom Header feature.

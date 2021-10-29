@@ -41,38 +41,48 @@ if ( ! function_exists( 'desa_header_style' ) ) :
 	 * @see desa_custom_header_setup().
 	 */
 	function desa_header_style() {
+		echo '<style id="desa-custom-header" type="text/css">';
 		$header_text_color = get_header_textcolor();
-
 		/*
 		 * If no custom options for text are set, let's bail.
 		 * get_header_textcolor() options: Any hex value, 'blank' to hide text. Default: add_theme_support( 'custom-header' ).
 		 */
-		if ( get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color ) {
-			return;
+		if ( get_theme_support( 'custom-header', 'default-text-color' ) !== $header_text_color ){
+			// If we get this far, we have custom styles. Let's do this.
+			// Has the text been hidden?
+			if ( ! display_header_text() ) :
+				?>
+				.site-title,
+				.site-description {
+					position: absolute;
+					clip: rect(1px, 1px, 1px, 1px);
+					}
+				<?php
+				// If the user has set a custom color for the text use that.
+			else :
+				?>
+				.site-title a,
+				.site-description {
+					color: #<?php echo esc_attr( $header_text_color ); ?>;
+				}
+			<?php endif;
 		}
 
-		// If we get this far, we have custom styles. Let's do this.
-		?>
-		<style type="text/css">
-		<?php
-		// Has the text been hidden?
-		if ( ! display_header_text() ) :
-			?>
-			.site-title,
-			.site-description {
-				position: absolute;
-				clip: rect(1px, 1px, 1px, 1px);
-				}
-			<?php
-			// If the user has set a custom color for the text use that.
-		else :
-			?>
-			.site-title a,
-			.site-description {
-				color: #<?php echo esc_attr( $header_text_color ); ?>;
+		/**
+		 * Desa custom theme
+		 */
+		$_desa_tmp_styles = [];
+		foreach ($GLOBALS['desa_customizable_color'] as $id => $val)
+		{
+			$color = get_theme_mod( $id );
+			if ( '' != $color ) {
+				$_desa_tmp_styles[] = sprintf($val['css'], $color);
 			}
-		<?php endif; ?>
-		</style>
-		<?php
+		}
+
+		echo implode("\n", $_desa_tmp_styles);
+		unset($_desa_tmp_styles);
+
+		echo '</style>';
 	}
 endif;
