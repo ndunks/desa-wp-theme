@@ -10,8 +10,9 @@
  */
 
 ?>
-
-	<footer id="colophon" class="site-footer">
+		</div>
+	</div>
+	<footer id="colophon" class="container">
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'desa' ) ); ?>">
 				<?php
