@@ -95,9 +95,16 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 --------------------------------------------------------------*/
 
 /* Accessibility
---------------------------------------------- */
-@import "utilities/accessibility";
+// --------------------------------------------- */
+// @import "utilities/accessibility";
 
-/* Alignments
---------------------------------------------- */
-@import "utilities/alignments";
+// /* Alignments
+// --------------------------------------------- */
+// @import "utilities/alignments";
+
+a {
+	text-decoration: none;
+}
+body {
+	background-image: url(img/background.png);
+}
