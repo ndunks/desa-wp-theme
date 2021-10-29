@@ -21,15 +21,20 @@
 </head>
 
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
+<?php
+wp_body_open();
+$_has_logo = get_theme_mod( 'custom_logo', false  ) != false;
+?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'desa' ); ?></a>
 
-	<header id="masthead" class="mb-5">
-		<div class="container pt-3">
-			<div class="site-branding">
+	<header id="masthead" class="text-center">
+		<div class="container py-3 <?php echo $_has_logo ? 'has-logo' : '' ?>">
+			
+			<?php the_custom_logo(); ?>
+
+			<div class="site-branding flex-grow-1">
 				<?php
-				the_custom_logo();
 				if ( is_front_page() && is_home() ) :
 					?>
 					<h1 class="site-title h1"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
@@ -46,6 +51,10 @@
 				<?php endif; ?>
 			</div><!-- .site-branding -->
 
+		</div>
+	</header><!-- #masthead -->
+	<div id="site-nav" class="mb-4 border-top py-2">
+		<div class="container">
 			<nav id="site-navigation" class="main-navigation">
 				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'desa' ); ?></button>
 				<?php
@@ -58,6 +67,6 @@
 				?>
 			</nav><!-- #site-navigation -->
 		</div>
-	</header><!-- #masthead -->
+	</div>
 	<div class="container">
 		<div class="row">

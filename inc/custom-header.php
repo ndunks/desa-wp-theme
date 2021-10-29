@@ -23,7 +23,7 @@ function desa_custom_header_setup() {
 			'desa_custom_header_args',
 			array(
 				'default-image'      => '',
-				'default-text-color' => '000000',
+				'default-text-color' => '',
 				'width'              => 1000,
 				'height'             => 250,
 				'flex-height'        => true,

@@ -310,10 +310,20 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 --------------------------------------------------------------*/
 /* Accessibility
 // --------------------------------------------- */
+body {
+	background-image: url(img/background.png);
+}
+
 a {
 	text-decoration: none;
 }
 
-body {
-	background-image: url(img/background.png);
+.site-title a, .site-description {
+	color: #52b046;
+}
+
+@media (min-width: 576px) {
+	#masthead .has-logo {
+		display: flex;
+	}
 }
