@@ -48,27 +48,77 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Alignments
 
 --------------------------------------------------------------*/
-/*--------------------------------------------------------------
-# Generic
---------------------------------------------------------------*/
-/* Normalize
---------------------------------------------- */
-/* Box sizing
---------------------------------------------- */
-/*--------------------------------------------------------------
-# Base
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-# Layouts
---------------------------------------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@200;400&family=Nunito+Sans:ital,wght@0,200;0,400;0,700;1,400;1,700&display=swap");
+body {
+	background-image: url(img/background.png);
+	font-family: 'Nunito Sans', sans-serif;
+}
+
+.site-title {
+	font-weight: lighter;
+	font-family: 'Jost', sans-serif;
+}
+
+.site-description {
+	font-weight: normal;
+}
+
+.site-title a, .site-description {
+	color: #ffffff;
+}
+
+.entry-title, .widget h2 {
+	font-weight: lighter;
+}
+
+#masthead {
+	background-color: #119500;
+}
+
+@media (min-width: 576px) {
+	#masthead .has-logo {
+		display: flex;
+	}
+}
+
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
 /* Navigation
 --------------------------------------------- */
+@media (min-width: 768px) {
+	#desa-menu-1 {
+		border-left: 1px solid #dee2e6;
+	}
+}
+
+.site-main .comment-navigation, .site-main
+.posts-navigation, .site-main
+.post-navigation {
+	margin: 0 0 1.5em;
+}
+
+.comment-navigation .nav-links,
+.posts-navigation .nav-links,
+.post-navigation .nav-links {
+	display: flex;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+	flex: 1 0 50%;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+	text-align: end;
+	flex: 1 0 50%;
+}
+
 /* Posts and pages
 --------------------------------------------- */
-@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 .sticky {
 	display: block;
 }
@@ -86,6 +136,17 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 .entry-content,
 .entry-summary {
 	margin: 1.5em 0 0;
+	background-color: #f8f9fa;
+	padding: 15px 0px;
+	box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.page-content > p, .page-content table,
+.entry-content > p,
+.entry-content table,
+.entry-summary > p,
+.entry-summary table {
+	margin: 0px 1rem 1rem 1rem;
 }
 
 .page-links {
@@ -115,6 +176,20 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 /* Media
 --------------------------------------------- */
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+.entry-content img {
+	max-width: 100%;
+	height: auto;
+}
+
 /* Captions
 --------------------------------------------- */
 .wp-caption {
@@ -207,31 +282,3 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 --------------------------------------------------------------*/
 /* Accessibility
 // --------------------------------------------- */
-body {
-	background-image: url(img/background.png);
-	font-family: 'PT Sans', sans-serif;
-}
-
-a {
-	text-decoration: none;
-}
-
-.site-title a, .site-description {
-	color: #ffffff;
-}
-
-#masthead {
-	background-color: #119500;
-}
-
-@media (min-width: 576px) {
-	#masthead .has-logo {
-		display: flex;
-	}
-}
-
-@media (min-width: 768px) {
-	#desa-menu-1 {
-		border-left: 1px solid #dee2e6;
-	}
-}

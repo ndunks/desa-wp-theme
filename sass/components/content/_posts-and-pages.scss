@@ -15,6 +15,12 @@
 .entry-content,
 .entry-summary {
 	margin: 1.5em 0 0;
+	background-color: $light;
+    padding: 15px 0px;
+	box-shadow: $box-shadow-sm;
+	&>p, table {
+		margin: 0px $paragraph-margin-bottom $paragraph-margin-bottom $paragraph-margin-bottom;
+	}
 }
 
 .page-links {

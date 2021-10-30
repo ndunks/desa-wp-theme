@@ -50,32 +50,57 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	- Alignments
 
 --------------------------------------------------------------*/
+// Bootstrap 5 Configuration
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+@import "node_modules/bootstrap/scss/utilities";
+
+ // Desa custom variables
+@import "variables";
+
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@200;400&family=Nunito+Sans:ital,wght@0,200;0,400;0,700;1,400;1,700&display=swap');
+
+body {
+    background-image: url(img/background.png);
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.site-title {
+	font-weight: lighter;
+	font-family: 'Jost', sans-serif;
+	
+}
+
+.site-description {
+	font-weight: normal;
+}
+
+.site-title a, .site-description {
+    color: #ffffff;
+}
+
+.entry-title, .widget h2 {
+	font-weight: lighter;
+}
+
+#masthead {
+    background-color: #119500;
+}
+
+// #site-nav {
+//     background-color: #ff9900;
+// }
+
+@include media-breakpoint-up(sm) {
+    #masthead .has-logo {
+        display: flex;
+    }
+}
+
 
 // Import variables and mixins.
 @import "abstracts/abstracts";
-
-/*--------------------------------------------------------------
-# Generic
---------------------------------------------------------------*/
-
-/* Normalize
---------------------------------------------- */
-//@import "generic/normalize";
-
-/* Box sizing
---------------------------------------------- */
-// @import "generic/box-sizing";
-
-/*--------------------------------------------------------------
-# Base
---------------------------------------------------------------*/
-// @import "base/base";
-
-/*--------------------------------------------------------------
-# Layouts
---------------------------------------------------------------*/
-// @import "layouts/content-sidebar"; // Uncomment this line for a sidebar on right side of your content.
-// @import "layouts/sidebar-content"; // Uncomment this line for a sidebar on left side of your content.
 
 /*--------------------------------------------------------------
 # Components
@@ -101,5 +126,3 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 // /* Alignments
 // --------------------------------------------- */
 // @import "utilities/alignments";
-
-@import 'desa';
