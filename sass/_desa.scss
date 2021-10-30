@@ -4,19 +4,38 @@
 @import "node_modules/bootstrap/scss/mixins";
 @import "node_modules/bootstrap/scss/utilities";
 
+ // Desa custom variables
+@import "variables";
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 body {
     background-image: url(img/background.png);
+    font-family: 'PT Sans', sans-serif;
 }
 
 a {
     text-decoration: none;
 }
 .site-title a, .site-description {
-    color: #52b046;
+    color: #ffffff;
 }
+
+#masthead {
+    background-color: #119500;
+}
+
+// #site-nav {
+//     background-color: #ff9900;
+// }
 
 @include media-breakpoint-up(sm) {
     #masthead .has-logo {
         display: flex;
+    }
+}
+@include media-breakpoint-up(md) {
+    #desa-menu-1 {
+        border-left: 1px solid $border-color;
     }
 }

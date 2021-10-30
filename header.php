@@ -53,9 +53,12 @@ $_has_logo = get_theme_mod( 'custom_logo', false  ) != false;
 
 		</div>
 	</header><!-- #masthead -->
-	<div id="site-nav" class="mb-5 border-bottom">
-		<nav id="site-navigation" class="main-navigation navbar navbar-expand-md navbar-light xbg-light" role="navigation">
-				<div class="container">
+	<div id="site-nav" class="mb-5 border-bottom shadow">
+		<nav id="site-navigation" class="main-navigation navbar navbar-expand-md navbar-light bg-light" role="navigation">
+			<div class="container">
+				<a class="navbar-brand text-green" href="/">
+					<i class="bi bi-house-door-fill"></i>
+				</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#desa-menu-1" aria-controls="desa-menu-1" aria-expanded="false" aria-label="<?php esc_html_e( 'Menu', 'desa' ); ?>">
 					<span class="navbar-toggler-icon"></span>
 				</button>
