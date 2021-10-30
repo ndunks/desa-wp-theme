@@ -31,6 +31,8 @@ function desa_custom_header_setup() {
 			)
 		)
 	);
+	
+	require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 }
 add_action( 'after_setup_theme', 'desa_custom_header_setup' );
 

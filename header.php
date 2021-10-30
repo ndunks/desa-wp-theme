@@ -53,20 +53,29 @@ $_has_logo = get_theme_mod( 'custom_logo', false  ) != false;
 
 		</div>
 	</header><!-- #masthead -->
-	<div id="site-nav" class="mb-4 border-top py-2">
-		<div class="container">
-			<nav id="site-navigation" class="main-navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'desa' ); ?></button>
+	<div id="site-nav" class="mb-5 border-bottom">
+		<nav id="site-navigation" class="main-navigation navbar navbar-expand-md navbar-light xbg-light" role="navigation">
+				<div class="container">
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#desa-menu-1" aria-controls="desa-menu-1" aria-expanded="false" aria-label="<?php esc_html_e( 'Menu', 'desa' ); ?>">
+					<span class="navbar-toggler-icon"></span>
+				</button>
 				<?php
 				wp_nav_menu(
 					array(
 						'theme_location' => 'menu-1',
 						'menu_id'        => 'primary-menu',
+						'depth'             => 2,
+						'container'         => 'div',
+						'container_class'   => 'collapse navbar-collapse',
+						'container_id'      => 'desa-menu-1',
+						'menu_class'        => 'nav navbar-nav',
+						'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+						'walker'            => new WP_Bootstrap_Navwalker(),
 					)
 				);
 				?>
-			</nav><!-- #site-navigation -->
 		</div>
+			</nav><!-- #site-navigation -->
 	</div>
 	<div class="container">
 		<div class="row">
