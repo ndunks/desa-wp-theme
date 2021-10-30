@@ -53,7 +53,7 @@ $_has_logo = get_theme_mod( 'custom_logo', false  ) != false;
 
 		</div>
 	</header><!-- #masthead -->
-	<div id="site-nav" class="mb-5 border-bottom shadow">
+	<div id="site-nav" class="mb-5 border-bottom shadow-sm">
 		<nav id="site-navigation" class="main-navigation navbar navbar-expand-md navbar-light bg-light" role="navigation">
 			<div class="container">
 				<a class="navbar-brand text-green" href="/">

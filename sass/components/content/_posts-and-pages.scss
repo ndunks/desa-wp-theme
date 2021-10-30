@@ -18,7 +18,7 @@
 	background-color: $light;
     padding: 15px 0px;
 	box-shadow: $box-shadow-sm;
-	&>p, table {
+	&>*:not(figure) {
 		margin: 0px $paragraph-margin-bottom $paragraph-margin-bottom $paragraph-margin-bottom;
 	}
 }
