@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main col-sm-8 col-lg-9">
+	<main id="primary" class="site-main col-sm-8">
 
 		<?php if ( have_posts() ) : ?>
 
