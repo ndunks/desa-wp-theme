@@ -22,7 +22,7 @@ function desa_custom_header_setup() {
 		apply_filters(
 			'desa_custom_header_args',
 			array(
-				'default-image'      => '',
+				'default-image'      => get_template_directory_uri() . '/img/header.jpg',
 				'default-text-color' => '',
 				'width'              => 1000,
 				'height'             => 250,
@@ -45,6 +45,7 @@ if ( ! function_exists( 'desa_header_style' ) ) :
 	function desa_header_style() {
 		echo '<style id="desa-custom-header" type="text/css">';
 		$header_text_color = get_header_textcolor();
+		$header_bg_image = get_header_image();
 		/*
 		 * If no custom options for text are set, let's bail.
 		 * get_header_textcolor() options: Any hex value, 'blank' to hide text. Default: add_theme_support( 'custom-header' ).
@@ -52,23 +53,27 @@ if ( ! function_exists( 'desa_header_style' ) ) :
 		if ( get_theme_support( 'custom-header', 'default-text-color' ) !== $header_text_color ){
 			// If we get this far, we have custom styles. Let's do this.
 			// Has the text been hidden?
-			if ( ! display_header_text() ) :
-				?>
+			if ( display_header_text() ) : ?>
+					.site-title a,
+					.site-description {
+						color: #<?php echo esc_attr( $header_text_color ); ?>;
+					}
+				<?php
+				// If the user has set a custom color for the text use that.
+			else : ?>
 				.site-title,
 				.site-description {
 					position: absolute;
 					clip: rect(1px, 1px, 1px, 1px);
-					}
-				<?php
-				// If the user has set a custom color for the text use that.
-			else :
-				?>
-				.site-title a,
-				.site-description {
-					color: #<?php echo esc_attr( $header_text_color ); ?>;
 				}
 			<?php endif;
 		}
+
+		if( $header_bg_image ){ ?>
+			#masthead {
+				background-image: url(<?= esc_url( $header_bg_image) ?>);
+			}
+		<?php }
 
 		/**
 		 * Desa custom theme

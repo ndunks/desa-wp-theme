@@ -22,34 +22,6 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
 
-
-/*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-# Generic
-	- Normalize
-	- Box sizing
-# Base
-	- Typography
-	- Elements
-	- Links
-	- Forms
-## Layouts
-# Components
-	- Navigation
-	- Posts and pages
-	- Comments
-	- Widgets
-	- Media
-	- Captions
-	- Galleries
-# plugins
-	- Jetpack infinite scroll
-# Utilities
-	- Accessibility
-	- Alignments
-
---------------------------------------------------------------*/
 // Bootstrap 5 Configuration
 @import "node_modules/bootstrap/scss/functions";
 @import "node_modules/bootstrap/scss/variables";
@@ -86,6 +58,15 @@ body {
 
 #masthead {
     background-color: #119500;
+	background-position: center;
+    background-size: cover;
+	min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+	>:first-child {
+		text-shadow: 1px 2px 3px black;
+	}
 }
 
 // #site-nav {

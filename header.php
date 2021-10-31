@@ -28,8 +28,8 @@ $_has_logo = get_theme_mod( 'custom_logo', false  ) != false;
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'desa' ); ?></a>
 
-	<header id="masthead" class="text-center">
-		<div class="container py-3 <?php echo $_has_logo ? 'has-logo' : '' ?>">
+	<header id="masthead" class="shadow-sm">
+		<div class="container text-center py-3 <?php echo $_has_logo ? 'has-logo' : '' ?>">
 			
 			<?php the_custom_logo(); ?>
 
@@ -53,32 +53,31 @@ $_has_logo = get_theme_mod( 'custom_logo', false  ) != false;
 
 		</div>
 	</header><!-- #masthead -->
-	<div id="site-nav" class="mb-5 border-bottom shadow-sm">
-		<nav id="site-navigation" class="main-navigation navbar navbar-expand-md navbar-light bg-light" role="navigation">
-			<div class="container">
-				<a class="navbar-brand text-green" href="/">
-					<i class="bi bi-house-door-fill"></i>
-				</a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#desa-menu-1" aria-controls="desa-menu-1" aria-expanded="false" aria-label="<?php esc_html_e( 'Menu', 'desa' ); ?>">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<?php
-				wp_nav_menu(
-					array(
-						'theme_location' => 'menu-1',
-						'menu_id'        => 'primary-menu',
-						'depth'             => 2,
-						'container'         => 'div',
-						'container_class'   => 'collapse navbar-collapse',
-						'container_id'      => 'desa-menu-1',
-						'menu_class'        => 'nav navbar-nav',
-						'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-						'walker'            => new WP_Bootstrap_Navwalker(),
-					)
-				);
-				?>
+	<nav id="site-navigation" class="main-navigation mb-5 navbar navbar-expand-md navbar-dark" role="navigation">
+		<div class="container">
+			<a class="navbar-brand" href="/">
+				<i class="bi bi-house-door-fill"></i>
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#desa-menu-1" aria-controls="desa-menu-1" aria-expanded="false" aria-label="<?php esc_html_e( 'Menu', 'desa' ); ?>">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<?php
+			wp_nav_menu(
+				array(
+					'theme_location' => 'menu-1',
+					'menu_id'        => 'primary-menu',
+					'depth'             => 2,
+					'container'         => 'div',
+					'container_class'   => 'collapse navbar-collapse',
+					'container_id'      => 'desa-menu-1',
+					'menu_class'        => 'nav navbar-nav',
+					'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+					'walker'            => new WP_Bootstrap_Navwalker(),
+				)
+			);
+			?>
 		</div>
-			</nav><!-- #site-navigation -->
-	</div>
+	</nav><!-- #site-navigation -->
+	
 	<div class="container">
 		<div class="row">

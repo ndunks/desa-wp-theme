@@ -21,33 +21,6 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
-/*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-# Generic
-	- Normalize
-	- Box sizing
-# Base
-	- Typography
-	- Elements
-	- Links
-	- Forms
-## Layouts
-# Components
-	- Navigation
-	- Posts and pages
-	- Comments
-	- Widgets
-	- Media
-	- Captions
-	- Galleries
-# plugins
-	- Jetpack infinite scroll
-# Utilities
-	- Accessibility
-	- Alignments
-
---------------------------------------------------------------*/
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@200;400&family=Nunito+Sans:ital,wght@0,200;0,400;0,700;1,400;1,700&display=swap");
 body {
 	background-image: url(img/background.png);
@@ -73,6 +46,16 @@ body {
 
 #masthead {
 	background-color: #119500;
+	background-position: center;
+	background-size: cover;
+	min-height: 200px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+#masthead > :first-child {
+	text-shadow: 1px 2px 3px black;
 }
 
 @media (min-width: 576px) {
@@ -115,6 +98,11 @@ body {
 .post-navigation .nav-next {
 	text-align: end;
 	flex: 1 0 50%;
+}
+
+#site-navigation {
+	background-color: #e3bd05;
+	background: linear-gradient(357deg, #e3bd05 0%, #35bf23 100%);
 }
 
 /* Posts and pages

@@ -1,12 +1,12 @@
 $desa-color: #0e9100;
-$navbar-dark-color:                 rgba($white, .55);
-$navbar-dark-hover-color:           rgba($white, .75);
+$navbar-dark-color:                 rgba($white, .95);
+$navbar-dark-hover-color:           $white;
 
-$navbar-light-color:                 rgba($desa-color, .90);
-$navbar-light-hover-color:           $desa-color;
+$navbar-light-color:                 rgba($black, .90);
+$navbar-light-hover-color:           $black;
 
-$navbar-light-brand-color:                $desa-color;
-$navbar-light-brand-hover-color:          $desa-color;
+$navbar-light-brand-color:                $white;
+$navbar-light-brand-hover-color:          $white;
 $navbar-dark-brand-color:                 $navbar-dark-active-color;
 $navbar-dark-brand-hover-color:           $navbar-dark-active-color;
 
