@@ -4,7 +4,7 @@ Theme URI: https://klampok.id/
 Author: klampok.id
 Author URI: https://klampok.id/
 Description: Tema untuk website desa
-Version: 1.0.0
+Version: 1.0.2
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -173,6 +173,11 @@ body {
 	margin-bottom: 0;
 	margin-top: 0;
 	padding: 0;
+}
+
+.attachment-post-thumbnail {
+	max-width: 100%;
+	height: auto;
 }
 
 .entry-content img {
