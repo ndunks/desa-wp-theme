@@ -53,7 +53,7 @@ $_has_logo = get_theme_mod( 'custom_logo', false  ) != false;
 
 		</div>
 	</header><!-- #masthead -->
-	<nav id="site-navigation" class="main-navigation mb-5 navbar navbar-expand-md navbar-dark" role="navigation">
+	<nav id="site-navigation" class="main-navigation navbar navbar-expand-md navbar-dark" role="navigation">
 		<div class="container">
 			<a class="navbar-brand" href="/">
 				<i class="bi bi-house-door-fill"></i>
@@ -79,5 +79,6 @@ $_has_logo = get_theme_mod( 'custom_logo', false  ) != false;
 		</div>
 	</nav><!-- #site-navigation -->
 	
-	<div class="container">
+	<?php dynamic_sidebar( 'sidebar-main' ); ?>
+	<div class="container mt-5">
 		<div class="row">
