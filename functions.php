@@ -109,6 +109,7 @@ if ( ! function_exists( 'desa_setup' ) ) :
             'title' => 'Desa Theme',
             'file' => __FILE__,
             'update_git' => true,
+			'git_branch' => 'main',
             'version' => '-',
         ];
         return $value;
