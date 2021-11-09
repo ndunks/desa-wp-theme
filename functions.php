@@ -100,7 +100,7 @@ if ( ! function_exists( 'desa_setup' ) ) :
 				'flex-height' => true,
 			)
 		);
-		add_filter( 'opensid_extensions', 'desa_filter_callback', 1 );
+		add_filter( 'opensid_extensions', 'desa_filter_callback', 2 );
     }
 
     function desa_filter_callback($value){
